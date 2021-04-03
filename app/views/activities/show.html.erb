@@ -33,12 +33,12 @@
   </div>
   <h3 class="impmark">感想</h4>
   <h2 class="imp">
-    <%= @activity.impression %>
+    <%= @activity.impression unless @activity.impression.nil?%>
   </h2>
   <div class="feedback">
     <h3 class="fbcomment">ゼミスタからのコメント</h3>
     <h2 class="fbcontent">
-      <%= @activity.fb %>
+      <%= @activity.fb unless @activity.fb.nil? %>
     </h2>
   </div>
   <div class="editbuttun">
