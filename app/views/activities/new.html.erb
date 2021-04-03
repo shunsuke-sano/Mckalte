@@ -1,4 +1,4 @@
-<div class="welcom">カルテを登録</div>
+<div class="welcom">カルテを追加</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
@@ -16,25 +16,30 @@
       <%= f.select :basetarget, [["姿勢", "姿勢"],["摩擦", "摩擦"],["タダナラ","タダナラ"],["イ段・拗音","イ段・拗音"],["拍乱れを防ぐ","拍乱れを防ぐ"],["撥音・促音","撥音・促音"],["無声化", "無声化"],["鼻濁音", "鼻濁音"],["声量大","声量大"] ], include_blank: "基礎目標を選んでください", class: 'form-control' %>
       <br>
       <%= f.label :基礎コメント %>
-      <%= f.text_field :basecomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
+      <%= f.text_area :basecomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
       <%= f.label :表現目標 %>
       <br>
       <%= f.select :extarget, [["トーン変化（高）", "トーン変化（高）"],["トーン変化（低）", "トーン変化（低）"],["声量変化", "声量変化"],["間", "間"],["スピード変化", "スピード変化"]], include_blank: "表現目標を選んでください", class: 'form-control' %>
       <br>
       <%= f.label :表現コメント %>
-      <%= f.text_field :excomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
+      <%= f.text_area :excomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
       
       <%= f.label :司会目標 %>
       <br>
       <%= f.select :mctarget, [["ゲスト応対", "ゲスト応対"],["観客を巻き込む", "観客を巻き込む"],["トークバランス", "トークバランス"]], include_blank: "司会目標を選んでください", class: 'form-comtrol' %>
       <br>
       <%= f.label :司会コメント %>
-      <%= f.text_field :mccomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
+      <%= f.text_area :mccomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
 
-      
+      <%= f.label :感想 %>
+      <%= f.text_area :impression, class: 'form-control', placeholder: "感想等何でもどうぞ！" %>
+
       <div class="text-center touroku">
         <%= f.submit "登録", class: "btn btn-primary" %>
       </div>
+      <%= link_to :back do %>
+        <h5 class="return">戻る</h5>
+      <% end %>
     <% end %>
 
   </div>

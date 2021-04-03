@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_225833) do
+ActiveRecord::Schema.define(version: 2021_04_03_225550) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_225833) do
     t.string "mctarget"
     t.text "mccomment"
     t.text "fb"
+    t.text "impression"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 

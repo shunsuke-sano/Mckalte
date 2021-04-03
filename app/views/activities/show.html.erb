@@ -31,15 +31,19 @@
     <% end %>
   </div>
   </div>
+  <h3 class="impmark">感想</h4>
+  <h2 class="imp">
+    <%= @activity.impression %>
+  </h2>
   <div class="feedback">
     <h3 class="fbcomment">ゼミスタからのコメント</h3>
-    <div class="fbcontent">
+    <h2 class="fbcontent">
       <%= @activity.fb %>
-    </div>
+    </h2>
   </div>
   <div class="editbuttun">
     <%= link_to "編集", edit_activity_path(@activity) %>
   </div>
-  <%= link_to :back do %>
-    <h5 class="return">戻る</h5>
-  <% end %>
+  <div class="butn">
+    <%= link_to "カルテ一覧へ", user_path(current_user) %>
+  </div>

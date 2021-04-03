@@ -11,17 +11,17 @@
 
       <%= f.label :メールアドレス %>
       <%= f.email_field :email, class: 'form-control' %>
-
       <%= f.label :学年 %>
-      <%= f.number_field :grade, class: 'form-control', min: 1, max: 8 %>
-
+      <br>
+      <%= f.select :grade, [['１年生', 1], ['２年生', 2], ['３年生', 3], ['４年生', 4], ['それ以上', 5]], class: 'form-control'%>
+      <br>
       <%= f.label :パスワード %>
       <%= f.password_field :password, class: 'form-control ' %>
 
       <%= f.label :パスワード（確認用）%>
       <%= f.password_field :password_confirmation, class: "form-control" %>
       
-      <%= f.submit "カルテを作る", class: "btn btn-primary mb-4" %>
+      <%= f.submit "登録", class: "btn btn-primary mb-4" %>
       <br>
       <%= link_to "戻る", login_path %>
     <% end %>

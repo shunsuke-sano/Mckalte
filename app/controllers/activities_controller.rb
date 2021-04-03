@@ -46,7 +46,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:title, :day, :mctarget, :mccomment, :excomment, :extarget, :basetarget, :basecomment, :fb)
+    params.require(:activity).permit(:title, :day, :mctarget, :mccomment, :excomment, :extarget, :basetarget, :basecomment, :fb, :impression)
   end
 
   def correct_user
