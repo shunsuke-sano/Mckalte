@@ -28,9 +28,10 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
+    @user = @activity.user
     if @activity.update(activity_params)
       flash[:success] = " カルテを更新しました"
-      redirect_to current_user
+      redirect_to @user
     else
       render 'edit'
     end

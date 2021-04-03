@@ -26,3 +26,6 @@
 <% if @user == current_user %>
   <%= link_to "ログアウト", logout_path, method: :delete %>
 <% end %>
+<% if current_user.admin? %>
+  <%= link_to "一覧へ", users_path %>
+<% end %>
