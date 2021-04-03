@@ -1,42 +1,45 @@
-<h1><%= @activity.title %><h1>
+<h1 class="acttitle"><%= @activity.title %><h1>
+  <div class="row">
   <div class="col-sm-4">
-    <h2><%= "基礎目標" %></h2>
-    <h3><%= @activity.basetarget %></h3>
-    <br>
-    <h2><%= "コメント" %></h2>
+    <h3 class="target"><%= "基礎目標" %></h2>
+    <h2 class="targetname"><%= @activity.basetarget %></h3>
+    <h3 class="comment"><%= "コメント" %></h3>
     <% if @activity.basecomment.present? %>
-      <h3><%= @activity.basecomment %></h3>
+      <h2 class="commentcontent"><%= @activity.basecomment %></h2>
     <% else %>
-      <h3><%= "コメントを書き込もう" %></h3>
+      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
     <% end %>
   </div>
   <div class="col-sm-4">
-    <h2><%= "表現目標" %></h2>
-    <h3><%= @activity.extarget %></h3>
-    <br>
-    <h2><%= "コメント" %></h2>
+    <h3 class="target"><%= "表現目標" %></h2>
+    <h2 class="targetname"><%= @activity.extarget %></h3>
+    <h3 class="comment"><%= "コメント" %></h3>
     <% if @activity.excomment.present? %>
-      <h3><%= @activity.excomment %></h3>
+      <h2 class="commentcontent"><%= @activity.excomment %></h2>
     <% else %>
-      <h3><%= "コメントを書き込もう" %></h3>
+      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
     <% end %>
   </div>
   <div class="col-sm-4">
-    <h2><%= "司会目標" %></h2>
-    <h3><%= @activity.mctarget %></h3>
-    <br>
-    <h2><%= "コメント" %></h2>
+    <h3 class="target"><%= "司会目標" %></h2>
+    <h2 class="targetname"><%= @activity.mctarget %></h2>
+    <h3 class="comment"><%= "コメント" %></h3>
     <% if @activity.mccomment.present? %>
-      <h3><%= @activity.mccomment %></h3>
+      <h2 class="commentcontent"><%= @activity.mccomment %></h2>
     <% else %>
-      <h3><%= "コメントを書き込もう" %></h3>
+      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
     <% end %>
+  </div>
   </div>
   <div class="feedback">
-    <h1>ゼミスタからのコメント</h1>
-    <%= @activity.fb %>
+    <h3 class="fbcomment">ゼミスタからのコメント</h3>
+    <div class="fbcontent">
+      <%= @activity.fb %>
+    </div>
   </div>
-  <%= link_to "編集", edit_activity_path(@activity) %>
+  <div class="editbuttun">
+    <%= link_to "編集", edit_activity_path(@activity) %>
+  </div>
   <%= link_to :back do %>
-    <button class="return">戻る</button>
+    <h5 class="return">戻る</h5>
   <% end %>
