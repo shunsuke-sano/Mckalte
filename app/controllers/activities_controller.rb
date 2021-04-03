@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :edit, :update]
-  #before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:destroy]
   
   
   def new
@@ -35,6 +35,12 @@ class ActivitiesController < ApplicationController
     else
       render 'edit'
     end
+  end
+  
+  def destroy
+    @activity.destroy
+    flash[:success] = "カルテを削除しました"
+    redirect_to current_user
   end
 
   private
