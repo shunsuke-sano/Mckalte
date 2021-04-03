@@ -5,7 +5,7 @@
     <br>
     <h2><%= "コメント" %></h2>
     <% if @activity.basecomment.present? %>
-      <h5><%= @activity.basecomment %></h5>
+      <h3><%= @activity.basecomment %></h3>
     <% else %>
       <h3><%= "コメントを書き込もう" %></h3>
     <% end %>
@@ -16,7 +16,7 @@
     <br>
     <h2><%= "コメント" %></h2>
     <% if @activity.excomment.present? %>
-      <h5><%= @activity.excomment %></h5>
+      <h3><%= @activity.excomment %></h3>
     <% else %>
       <h3><%= "コメントを書き込もう" %></h3>
     <% end %>
@@ -27,10 +27,16 @@
     <br>
     <h2><%= "コメント" %></h2>
     <% if @activity.mccomment.present? %>
-      <h5><%= @activity.mccomment %></h5>
+      <h3><%= @activity.mccomment %></h3>
     <% else %>
       <h3><%= "コメントを書き込もう" %></h3>
     <% end %>
   </div>
-
-  <%= link_to "カルテ一覧に戻る", user_path(@activity.user) %>
+  <div class="feedback">
+    <h1>ゼミスタからのコメント</h1>
+    <%= @activity.fb %>
+  </div>
+  <%= link_to "編集", edit_activity_path(@activity) %>
+  <%= link_to :back do %>
+    <button class="return">戻る</button>
+  <% end %>

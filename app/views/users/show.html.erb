@@ -21,6 +21,8 @@
          <% end %> 
      </table>
   <% end %>
-<%= link_to "活動を追加", new_activity_path %>
+<%= link_to "カルテを追加", new_activity_path %>
 <br>
-<%= link_to "Log out", logout_path, method: :delete %>
+<% if @user == current_user %>
+  <%= link_to "ログアウト", logout_path, method: :delete %>
+<% end %>

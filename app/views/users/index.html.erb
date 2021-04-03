@@ -1,0 +1,23 @@
+<h1>登録者一覧</h1>
+<% if @users.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">名前</th>
+            <th scope="col">カルテ</th>
+            <th scope="col">メール</th>
+          </tr>
+        </thead>
+         <% @users.each do |user| %>
+      <tbody>
+          <tr>
+            <th scope="row"><%= user.name %></th>
+            <td><%= link_to "カルテ", user_path(user) %></td>
+            <td><%= user.email %>
+          </tr>    
+      </tbody>
+         <% end %> 
+     </table>
+<% end %>
+
+

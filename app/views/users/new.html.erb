@@ -1,7 +1,7 @@
-<h1>カルテ登録<h1>
+<div class="welcom">カルテ登録</div>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 text-center">
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -13,14 +13,14 @@
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :学年 %>
-      <%= f.number_field :grade, class: 'form-control' %>
+      <%= f.number_field :grade, class: 'form-control', min: 1, max: 8 %>
 
       <%= f.label :パスワード %>
       <%= f.password_field :password, class: 'form-control ' %>
 
-      <%= f.label :パスワード（確認用）, "Confirmation" %>
+      <%= f.label :パスワード（確認用）%>
       <%= f.password_field :password_confirmation, class: "form-control" %>
-
+      
       <%= f.submit "カルテを作る", class: "btn btn-primary" %>
     <% end %>
   </div>

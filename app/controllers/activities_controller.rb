@@ -1,5 +1,7 @@
 class ActivitiesController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :edit, :update]
+  #before_action :correct_user, only: [:edit, :update]
+  
   
   def new
     @activity = Activity.new
@@ -20,6 +22,20 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
   
+  def edit
+    @activity = Activity.find(params[:id])
+  end
+
+  def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      flash[:success] = " カルテを更新しました"
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def activity_params
