@@ -8,11 +8,12 @@
       <%= f.select :title, [["わんちゃんMC", "わんちゃんMC"],["まじかMC", "まじかMC"],["はてなぼっくすMC", "はてなぼっくすMC"],["にこいちMC", "にこいちMC"],["ソロ充MC", "ソロ充MC"],["セルフMC", "セルフMC"]], include_blank: "選択してください" %>
       <br>
       <%= f.label :日時 %>
+      <br>
       <%= f.datetime_field :day, class: 'form-control' %>
 
       <%= f.label :基礎目標 %>
       <br>
-      <%= f.select :basetarget, [["姿勢", "姿勢"],["摩擦", "摩擦"],["タダナラ","タダナラ"],["イ段・拗音","イ段・拗音"],["拍乱れを防ぐ","拍乱れを防ぐ"],["撥音・促音","撥音・促音"],["無声化", "無声化"]], include_blank: "基礎目標を選んでください", class: 'form-control' %>
+      <%= f.select :basetarget, [["姿勢", "姿勢"],["摩擦", "摩擦"],["タダナラ","タダナラ"],["イ段・拗音","イ段・拗音"],["拍乱れを防ぐ","拍乱れを防ぐ"],["撥音・促音","撥音・促音"],["無声化", "無声化"],["鼻濁音", "鼻濁音"],["声量大","声量大"] ], include_blank: "基礎目標を選んでください", class: 'form-control' %>
       <br>
       <%= f.label :基礎コメント %>
       <%= f.text_field :basecomment, class: 'form-control', placeholder: "コメントを書き込もう" %>
