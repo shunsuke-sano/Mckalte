@@ -1,0 +1,26 @@
+<h1>
+  <%= @user.name %>
+</h1>
+  <% if @user.activities.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">活動名</th>
+            <th scope="col">日付</th>
+            <th scope="col">詳細</th>
+          </tr>
+        </thead>
+         <% @activities.each do |act| %>
+      <tbody>
+          <tr>
+            <th scope="row"><%= act.title %></th>
+            <td><%= act.day %></td>
+            <td><%= link_to "詳細", activity_path(act.id) %></td>
+          </tr>    
+      </tbody>
+         <% end %> 
+     </table>
+  <% end %>
+<%= link_to "活動を追加", new_activity_path %>
+<br>
+<%= link_to "Log out", logout_path, method: :delete %>

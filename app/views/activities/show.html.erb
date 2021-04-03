@@ -1,0 +1,36 @@
+<h1><%= @activity.title %><h1>
+  <div class="col-sm-4">
+    <h2><%= "基礎目標" %></h2>
+    <h3><%= @activity.basetarget %></h3>
+    <br>
+    <h2><%= "コメント" %></h2>
+    <% if @activity.basecomment.present? %>
+      <h5><%= @activity.basecomment %></h5>
+    <% else %>
+      <h3><%= "コメントを書き込もう" %></h3>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+    <h2><%= "表現目標" %></h2>
+    <h3><%= @activity.extarget %></h3>
+    <br>
+    <h2><%= "コメント" %></h2>
+    <% if @activity.excomment.present? %>
+      <h5><%= @activity.excomment %></h5>
+    <% else %>
+      <h3><%= "コメントを書き込もう" %></h3>
+    <% end %>
+  </div>
+  <div class="col-sm-4">
+    <h2><%= "司会目標" %></h2>
+    <h3><%= @activity.mctarget %></h3>
+    <br>
+    <h2><%= "コメント" %></h2>
+    <% if @activity.mccomment.present? %>
+      <h5><%= @activity.mccomment %></h5>
+    <% else %>
+      <h3><%= "コメントを書き込もう" %></h3>
+    <% end %>
+  </div>
+
+  <%= link_to "カルテ一覧に戻る", user_path(@activity.user) %>
