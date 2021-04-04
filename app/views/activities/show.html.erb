@@ -47,3 +47,8 @@
   <div class="butn">
     <%= link_to "カルテ一覧へ", user_path(current_user) %>
   </div>
+  <% if current_user.admin? %>
+    <%= link_to :back do %>
+      <h5 class="return">戻る</h5>
+    <% end %>
+  <% end %>

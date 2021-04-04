@@ -1,8 +1,12 @@
 class ActivitiesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :edit, :update]
   before_action :correct_user, only: [:destroy]
+  before_action :admin_user, only: [:index]
   
-  
+  def index
+    @activities = Activity.all.order(updated_at: :desc)
+  end
+
   def new
     @activity = Activity.new
   end

@@ -1,0 +1,26 @@
+<h1>カルテ新着順</h1>
+<%= link_to "登録者一覧はこちら", users_path %>
+<% if @activities.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">名前</th>
+            <th scope="col">活動名</th>
+            <th scope="col">コメント</th>
+            <th scope="col">カルテ</th>
+            <th scope="col">登録日</th>
+          </tr>
+        </thead>
+         <% @activities.each do |a| %>
+      <tbody>
+          <tr>
+            <th scope="row"><%= link_to a.user.name, user_path(a.user) %></th>
+            <td><%= a.title %>
+            <td><%= link_to "コメントする",  edit_activity_path(a) %></td>
+            <td><%= link_to "カルテを見る", activity_path(a) %></td>
+            <td><%= a.updated_at %></td>
+          </tr>    
+      </tbody>
+         <% end %> 
+     </table>
+<% end %>
