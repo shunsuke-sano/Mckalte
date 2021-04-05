@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
+    user = User.find_by(name: params[:session][:name])
     if user && user.authenticate(params[:session][:password])
       log_in user
       if user.admin?
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to user
       end
     else
-      flash[:danger] = "パスワードかメールアドレスが違います"
+      flash[:danger] = "パスワードか登録名が違います"
       render 'new'
     end
   end
