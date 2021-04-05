@@ -18,6 +18,7 @@
             <th scope="row"><%= act.title %></th>
             <td><%= act.day %></td>
             <td><%= link_to "詳細", activity_path(act.id) %></td>
+            <td><%= link_to "編集", edit_activity_path(act.id) %></td>
             <% if current_user?(act.user) %>
             <td><%= link_to "削除", act, method: :delete,
                                        data: { confirm: "削除してよろしいですか？" } %></td>
