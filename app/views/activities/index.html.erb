@@ -21,9 +21,9 @@
             <td><%= link_to "カルテを見る", activity_path(a) %></td>
             <td><%= a.updated_at %></td>
             <% if a.fb.present? %>
-              <td><%= "済" %></td>
+              <td class="sumi"><%= "済" %></td>
             <% else %>
-              <td><%= "末" %>
+              <td class="mada"><%= "末" %>
             <% end %>
           </tr>    
       </tbody>
