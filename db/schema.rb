@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_225550) do
+ActiveRecord::Schema.define(version: 2021_04_06_012821) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
-    t.datetime "day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_03_225550) do
     t.text "mccomment"
     t.text "fb"
     t.text "impression"
+    t.date "date"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 

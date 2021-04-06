@@ -8,7 +8,7 @@
       <%= f.select :title, [["わんちゃんMC", "わんちゃんMC"],["まじかMC", "まじかMC"],["はてなぼっくすMC", "はてなぼっくすMC"],["にこいちMC", "にこいちMC"],["ソロ充MC", "ソロ充MC"],["セルフMC", "セルフMC"]], include_blank: "選択してください" %>
       <br>
       <%= f.label :日時 %>
-      <%= f.datetime_field :day, class: 'form-control' %>
+      <%= f.date_field :date, class: 'form-control' %>
 
       <%= f.label :基礎目標 %>
       <br>

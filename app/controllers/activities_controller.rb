@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
-    @date = @activity.day
+    @date = @activity.date
   end
   
   def edit
@@ -56,7 +56,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:title, :day, :mctarget, :mccomment, :excomment, :extarget, :basetarget, :basecomment, :fb, :impression)
+    params.require(:activity).permit(:title, :date, :mctarget, :mccomment, :excomment, :extarget, :basetarget, :basecomment, :fb, :impression)
   end
 
   def correct_user
