@@ -9,7 +9,7 @@
             <th scope="col">コメント</th>
             <th scope="col">カルテ</th>
             <th scope="col">登録日</th>
-            <th scope="col">済</th>
+            <th scope="col">FB</th>
           </tr>
         </thead>
          <% @activities.each do |a| %>
@@ -20,7 +20,11 @@
             <td><%= link_to "コメントする",  edit_activity_path(a) %></td>
             <td><%= link_to "カルテを見る", activity_path(a) %></td>
             <td><%= a.updated_at %></td>
-            <td><%= check_box_tag :"" %></td>
+            <% if a.fb.present? %>
+              <td><%= "済" %></td>
+            <% else %>
+              <td><%= "末" %>
+            <% end %>
           </tr>    
       </tbody>
          <% end %> 

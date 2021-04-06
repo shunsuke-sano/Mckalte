@@ -1,4 +1,7 @@
 <h1 class="acttitle"><%= @activity.title %><h1>
+<% if @date.present? %>
+  <h3 class="actday" ><%= @date.strftime("%m月%d日") %></h3>
+<% end %>
   <div class="row">
   <div class="col-sm-4">
     <h3 class="target"><%= "基礎目標" %></h2>
@@ -45,7 +48,7 @@
     <%= link_to "編集", edit_activity_path(@activity) %>
   </div>
   <div class="butn">
-    <%= link_to "カルテ一覧へ", user_path(current_user) %>
+    <%= link_to "ユーザページへ", user_path(current_user) %>
   </div>
   <% if current_user.admin? %>
     <%= link_to :back do %>

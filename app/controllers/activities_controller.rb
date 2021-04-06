@@ -24,6 +24,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @date = @activity.day
   end
   
   def edit
@@ -34,8 +35,13 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @user = @activity.user
     if @activity.update(activity_params)
-      flash[:success] = " カルテを更新しました"
-      redirect_to @user
+      if current_user.admin?
+        flash[:success] = "コメントを追加しました"
+        redirect_to activities_url
+      else 
+        flash[:success] = " カルテを更新しました"
+        redirect_to @user
+      end
     else
       render 'edit'
     end
