@@ -43,6 +43,7 @@ class ActivitiesController < ApplicationController
         redirect_to @user
       end
     else
+      flash[:danger] = "活動を選んでください"
       render 'edit'
     end
   end
