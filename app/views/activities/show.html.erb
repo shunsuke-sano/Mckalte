@@ -48,7 +48,7 @@
     <%= link_to "編集", edit_activity_path(@activity) %>
   </div>
   <div class="butn">
-    <%= link_to "ユーザページへ", user_path(current_user) %>
+    <%= link_to "ユーザページへ", user_path(@activity.user) %>
   </div>
   <% if current_user.admin? %>
     <%= link_to :back do %>
