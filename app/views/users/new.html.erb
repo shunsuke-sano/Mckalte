@@ -1,3 +1,4 @@
+<div class="welcomepage">
 <div class="welcom">カルテ登録</div>
 
 <div class="row">
@@ -6,24 +7,27 @@
       <%= render 'shared/error_messages' %>
 
       <%= f.label :名前 %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control formcont' %>
 
 
       <%= f.label :メールアドレス（任意）%>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control formcont' %>
       <%= f.label :学年 %>
       <br>
-      <%= f.select :grade, [['１年生', 1], ['２年生', 2], ['３年生', 3], ['４年生', 4], ['それ以上', 5]], class: 'form-control'%>
+      <%= f.select :grade, [['１年生', 1], ['２年生', 2], ['３年生', 3], ['４年生', 4], ['それ以上', 5]], class: 'form-control formcont'%>
       <br>
-      <%= f.label :パスワード %>
-      <%= f.password_field :password, class: 'form-control ' %>
+      <%= f.label :パスワード, class: "fp" %>
+      <%= f.password_field :password, class: 'form-control formcont' %>
 
       <%= f.label :パスワード（確認用）%>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.password_field :password_confirmation, class: "form-control formcont" %>
       
-      <%= f.submit "登録", class: "btn btn-primary mb-4" %>
+      <%= f.submit "登録", class: "btn btn-primary signinbtn" %>
       <br>
-      <%= link_to "戻る", login_path %>
+      <div class="btn back-btn">
+        <%= link_to "戻る", login_path %>
+      </div>
     <% end %>
   </div>
+</div>
 </div>
