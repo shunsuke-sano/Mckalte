@@ -24,9 +24,9 @@
       
       <%= f.submit "登録", class: "btn btn-primary signinbtn" %>
       <br>
-      <div class="btn back-btn">
-        <%= link_to "戻る", login_path %>
-      </div>
+    <% end %>
+    <%= link_to :back do %>
+        <h5 class="return">戻る</h5>
     <% end %>
   </div>
 </div>

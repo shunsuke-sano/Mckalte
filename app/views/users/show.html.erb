@@ -1,4 +1,4 @@
-<h1>
+<h1 class="username">
   <%= @user.name %>
 </h1>
   <% if @user.activities.any? %>
@@ -28,11 +28,16 @@
          <% end %> 
      </table>
   <% end %>
-<%= link_to "カルテを追加", new_activity_path %>
-<br>
 <% if @user == current_user %>
-  <%= link_to "ログアウト", logout_path, method: :delete %>
+  <div class="newkalte">
+    <%= link_to "カルテを追加", new_activity_path %>
+  </div>
+  <div class="logout">
+    <%= link_to "ログアウト", logout_path, method: :delete %>
+  </div>
 <% end %>
 <% if current_user.admin? %>
-  <%= link_to "一覧へ", users_path %>
+  <div class="toall">
+    <%= link_to "一覧へ", users_path %>
+  </div>
 <% end %>
