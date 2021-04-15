@@ -6,7 +6,7 @@
   <div class="col-sm-4">
     <h3 class="target"><%= "基礎目標" %></h2>
     <h2 class="targetname"><%= @activity.basetarget %></h3>
-    <h3 class="comment"><%= "コメント" %></h3>
+    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
     <% if @activity.basecomment.present? %>
       <h2 class="commentcontent"><%= @activity.basecomment %></h2>
     <% else %>
@@ -16,7 +16,7 @@
   <div class="col-sm-4">
     <h3 class="target"><%= "表現目標" %></h2>
     <h2 class="targetname"><%= @activity.extarget %></h3>
-    <h3 class="comment"><%= "コメント" %></h3>
+    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
     <% if @activity.excomment.present? %>
       <h2 class="commentcontent"><%= @activity.excomment %></h2>
     <% else %>
@@ -26,7 +26,7 @@
   <div class="col-sm-4">
     <h3 class="target"><%= "司会目標" %></h2>
     <h2 class="targetname"><%= @activity.mctarget %></h2>
-    <h3 class="comment"><%= "コメント" %></h3>
+    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
     <% if @activity.mccomment.present? %>
       <h2 class="commentcontent"><%= @activity.mccomment %></h2>
     <% else %>
