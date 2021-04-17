@@ -1,48 +1,48 @@
-<h1 class="username"><%= @activity.title %><h1>
+<h3 class="username"><%= @activity.title %><h3>
 <% if @date.present? %>
-  <h3 class="actday" ><%= @date.strftime("%m月%d日") %></h3>
+  <h5 class="actday" ><%= @date.strftime("%m月%d日") %></h5>
 <% end %>
   <div class="row">
   <div class="col-sm-4">
-    <h3 class="target"><%= "基礎目標" %></h2>
-    <h2 class="targetname"><%= @activity.basetarget %></h3>
-    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
+    <h5 class="target"><%= "基礎目標" %></h5>
+    <p class="targetname"><%= @activity.basetarget %></p>
+    <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.basecomment.present? %>
-      <h2 class="commentcontent"><%= @activity.basecomment %></h2>
+      <p class="commentcontent"><%= @activity.basecomment %></p>
     <% else %>
-      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
+      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
     <% end %>
   </div>
   <div class="col-sm-4">
-    <h3 class="target"><%= "表現目標" %></h2>
-    <h2 class="targetname"><%= @activity.extarget %></h3>
-    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
+    <h5 class="target"><%= "表現目標" %></h5>
+    <p class="targetname"><%= @activity.extarget %></p>
+    <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.excomment.present? %>
-      <h2 class="commentcontent"><%= @activity.excomment %></h2>
+      <p class="commentcontent"><%= @activity.excomment %></p>
     <% else %>
-      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
+      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
     <% end %>
   </div>
   <div class="col-sm-4">
-    <h3 class="target"><%= "司会目標" %></h2>
-    <h2 class="targetname"><%= @activity.mctarget %></h2>
-    <h3 class="comment"><%= "コメント/反省・改善点" %></h3>
+    <h5 class="target"><%= "司会目標" %></h5>
+    <p class="targetname"><%= @activity.mctarget %></p>
+    <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.mccomment.present? %>
-      <h2 class="commentcontent"><%= @activity.mccomment %></h2>
+      <p class="commentcontent"><%= @activity.mccomment %></p>
     <% else %>
-      <h2 class="commentcontent"><%= "コメントを書き込もう" %></h2>
+      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
     <% end %>
   </div>
   </div>
-  <h3 class="impmark">感想</h4>
-  <h2 class="imp">
+  <h5 class="impmark">感想</h5>
+  <p class="imp">
     <%= @activity.impression unless @activity.impression.nil?%>
-  </h2>
+  </p>
   <div class="feedback">
-    <h3 class="fbcomment">ゼミスタからのコメント</h3>
-    <h2 class="fbcontent">
+    <h5 class="fbcomment">ゼミスタからのコメント</h5>
+    <p class="fbcontent">
       <%= @activity.fb unless @activity.fb.nil? %>
-    </h2>
+    </p>
   </div>
   <div class="editbuttun">
     <%= link_to "編集", edit_activity_path(@activity) %>
@@ -52,6 +52,6 @@
   </div>
   <% if current_user.admin? %>
     <%= link_to :back do %>
-      <h5 class="return">戻る</h5>
+      <p class="return">戻る</p>
     <% end %>
   <% end %>
