@@ -5,44 +5,44 @@
   <div class="row">
   <div class="col-sm-4">
     <h5 class="target"><%= "基礎目標" %></h5>
-    <p class="targetname"><%= @activity.basetarget %></p>
+    <h4 class="targetname"><%= @activity.basetarget %></h4>
     <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.basecomment.present? %>
-      <p class="commentcontent"><%= @activity.basecomment %></p>
+      <h4 class="commentcontent"><%= @activity.basecomment %></h4>
     <% else %>
-      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
+      <h4 class="commentcontent"><%= "コメントを書き込もう" %></h4>
     <% end %>
   </div>
   <div class="col-sm-4">
     <h5 class="target"><%= "表現目標" %></h5>
-    <p class="targetname"><%= @activity.extarget %></p>
+    <h4 class="targetname"><%= @activity.extarget %></h4>
     <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.excomment.present? %>
-      <p class="commentcontent"><%= @activity.excomment %></p>
+      <h4 class="commentcontent"><%= @activity.excomment %></h4>
     <% else %>
-      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
+      <h4 class="commentcontent"><%= "コメントを書き込もう" %></h4>
     <% end %>
   </div>
   <div class="col-sm-4">
     <h5 class="target"><%= "司会目標" %></h5>
-    <p class="targetname"><%= @activity.mctarget %></p>
+    <h4 class="targetname"><%= @activity.mctarget %></h4>
     <h5 class="comment"><%= "コメント/反省・改善点" %></h5>
     <% if @activity.mccomment.present? %>
-      <p class="commentcontent"><%= @activity.mccomment %></p>
+      <h4 class="commentcontent"><%= @activity.mccomment %></h4>
     <% else %>
-      <p class="commentcontent"><%= "コメントを書き込もう" %></p>
+      <h4 class="commentcontent"><%= "コメントを書き込もう" %></h4>
     <% end %>
   </div>
   </div>
   <h5 class="impmark">感想</h5>
-  <p class="imp">
+  <h4 class="imp">
     <%= @activity.impression unless @activity.impression.nil?%>
-  </p>
+  </h4>
   <div class="feedback">
     <h5 class="fbcomment">ゼミスタからのコメント</h5>
-    <p class="fbcontent">
+    <h4 class="fbcontent">
       <%= @activity.fb unless @activity.fb.nil? %>
-    </p>
+    </h4>
   </div>
   <div class="editbuttun">
     <%= link_to "編集", edit_activity_path(@activity) %>
