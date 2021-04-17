@@ -5,9 +5,8 @@
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">活動名</th>
+            <th scope="col">活動</th>
             <th scope="col">日付</th>
-            <th scope="col">詳細</th>
             <th scope="col">編集</th>
             <th scope="col">削除</th>
           </tr>
@@ -15,9 +14,8 @@
          <% @activities.each do |act| %>
       <tbody>
           <tr>
-            <th scope="row"><%= act.title %></th>
+            <th scope="row"><%= link_to act.title, activity_path(act.id) %></th>
             <td><%= act.date %></td>
-            <td><%= link_to "詳細", activity_path(act.id) %></td>
             <td><%= link_to "編集", edit_activity_path(act.id) %></td>
             <% if current_user?(act.user) %>
             <td><%= link_to "削除", act, method: :delete,

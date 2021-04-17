@@ -7,7 +7,6 @@
             <th scope="col">名前</th>
             <th scope="col">活動名</th>
             <th scope="col">コメント</th>
-            <th scope="col">カルテ</th>
             <th scope="col">登録日</th>
             <th scope="col">FB</th>
           </tr>
@@ -16,9 +15,8 @@
       <tbody>
           <tr>
             <th scope="row"><%= link_to a.user.name, user_path(a.user) %></th>
-            <td><%= a.title %>
+            <td><%= link_to a.title, activity_path(a) %>
             <td><%= link_to "コメントする",  edit_activity_path(a) %></td>
-            <td><%= link_to "カルテを見る", activity_path(a) %></td>
             <td><%= a.updated_at %></td>
             <% if a.fb.present? %>
               <td class="sumi"><%= "済" %></td>
