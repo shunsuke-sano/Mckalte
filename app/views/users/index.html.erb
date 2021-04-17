@@ -6,17 +6,15 @@
           <tr>
             <th scope="col">名前</th>
             <th scope="col">学年</th>
-            <th scope="col">カルテ</th>
             <th scope="col">メール</th>
           </tr>
         </thead>
          <% @users.each do |user| %>
       <tbody>
           <tr>
-            <th scope="row"><%= user.name %></th>
-            <td><%= user.grade %>
-            <td><%= link_to "カルテ", user_path(user) %></td>
-            <td><%= user.email %>
+            <th scope="row"><%= link_to user.name, user_path(user) %></th>
+            <td><%= user.grade %></td>
+            <td><%= user.email %></td>
           </tr>    
       </tbody>
          <% end %> 
