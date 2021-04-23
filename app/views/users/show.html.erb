@@ -30,6 +30,12 @@
   <div class="newkalte">
     <%= link_to "カルテを追加", new_activity_path %>
   </div>
+  <div class="tocomeka">
+    <%= link_to "コメカを書く(作成中)", new_comment_path %>
+  </div>
+  <div class="comekaindex">
+    <%= link_to "コメカを見る(作成中)", comments_path(user_id: current_user.id) %>
+  </div>
   <div class="logout">
     <%= link_to "ログアウト", logout_path, method: :delete %>
   </div>

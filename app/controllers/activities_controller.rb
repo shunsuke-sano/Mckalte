@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
   before_action :admin_user, only: [:index]
   
   def index
-    @activities = Activity.all.order(updated_at: :desc)
+    @activities = Activity.all.order(updated_at: :desc).page(params[:page]).per(15)
   end
 
   def new

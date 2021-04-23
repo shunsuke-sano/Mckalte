@@ -1,0 +1,28 @@
+<h1 class="username">
+  <%= "コメカ一覧" %>
+</h1>
+  <% if @comments.any? %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">From</th>
+            <th scope="col">良かった点</th>
+            <th scope="col">もっとよくなる！</th>
+            <th scope="col">フリースペース</th>
+          </tr>
+        </thead>
+         <% @comments.each do |c| %>
+      <tbody>
+          <tr>
+            <th scope="row"><%= c.from %></th>
+            <td><%= c.goodpoint %></td>
+            <td><%= c.badpoint %></td>
+            <td><%= c.free %></td>
+          </tr>    
+      </tbody>
+         <% end %> 
+     </table>
+  <% end %>
+  <div class="newkalte">
+    <%= link_to "カルテページへ戻る", user_path(current_user) %>
+  </div>
