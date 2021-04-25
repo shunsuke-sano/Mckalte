@@ -5,7 +5,7 @@
     <%= form_with(model: @comment, local: true) do |f| %>
 
       <%= f.label :to %>
-      <%= f.select(:user_id, User.all.map {|user|[user.name, user.id] }, {prompt: "送る相手を選択してください"}, {class: "form-control"}) %>
+      <%= f.select(:user_id, @user.all.map {|user|[user.name, user.id] }, {prompt: "送る相手を選択してください"}, {class: "form-control"}) %>
       <br>
       <%= f.label :From %>
       <%= f.text_field :from, class: "form-control" %>

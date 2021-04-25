@@ -5,11 +5,12 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @user = User.where(admin: false)
     @comment = Comment.new
   end
 
   def create
-    @user = User.find_by(params[:user_id])
+    @user = User.find_by(id: params[:comment][:user_id])
     @comment = @user.comments.build(comment_params)
     if @comment.save
       flash[:success] = "コメカを送信しました"
