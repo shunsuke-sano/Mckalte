@@ -1,27 +1,27 @@
-<div class="welcom">コメカ</div>
+<div class="welcom">コメントカード作成</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
     <%= form_with(model: @comment, local: true) do |f| %>
 
       <%= f.label :to %>
-      <%= f.select(:user_id, User.all.map {|user|[user.name, user.id] }, {prompt: "Select User"}, {class: "form-control"}) %>
-      
+      <%= f.select(:user_id, User.all.map {|user|[user.name, user.id] }, {prompt: "送る相手を選択してください"}, {class: "form-control"}) %>
+      <br>
       <%= f.label :From %>
       <%= f.text_field :from, class: "form-control" %>
-      
-      <%= f.label :良かった点 %>
-      <%= f.text_field :goodpoint, class: 'form-control formcont' %>
+      <br>
+      <%= f.label :ここがよかった！ %>
+      <%= f.text_area :goodpoint, class: 'form-control formcont' %>
 
       <%= f.label :改善点 %>
-      <br>
-      <%= f.text_field :badpoint, class: "form-control formcont" %>
-      <br>
-      <%= f.label :なんでも %>
-      <%= f.text_field :free, class: 'form-control formcont' %>
+      
+      <%= f.text_area :badpoint, class: "form-control formcont" %>
+
+      <%= f.label :フリースペース %>
+      <%= f.text_area :free, class: 'form-control formcont' %>
 
       
-      <%= f.submit "登録", class: "btn btn-primary signinbtn" %>
+      <%= f.submit "送信", class: "btn btn-primary signinbtn" %>
       <br>
     <% end %>
     <%= link_to :back do %>

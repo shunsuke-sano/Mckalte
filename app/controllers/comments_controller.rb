@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def index
-    @user = User.find_by(params[:user_id])
+    @user = current_user
     @comments = @user.comments.all
   end
 
@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(params[:comment][:user_id])
+    @user = User.find_by(params[:user_id])
     @comment = @user.comments.build(comment_params)
     if @comment.save
       flash[:success] = "コメカを送信しました"

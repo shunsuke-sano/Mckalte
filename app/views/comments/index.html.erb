@@ -1,12 +1,12 @@
 <h1 class="username">
   <%= "コメカ一覧" %>
 </h1>
-  <% if @comments.any? %>
+  <% if @comments.present? %>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">From</th>
-            <th scope="col">良かった点</th>
+            <th scope="col">ここがよかった！</th>
             <th scope="col">もっとよくなる！</th>
             <th scope="col">フリースペース</th>
           </tr>
