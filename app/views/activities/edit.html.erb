@@ -37,6 +37,7 @@
         <%= f.check_box :douroku, checked: true%>
         同時録画の配信を許可
       <% end %>
+      <br>
       <% if current_user.admin? %>
         <%= f.label :フィードバック %>
         <%= f.text_area :fb, class: 'form-control' %>
