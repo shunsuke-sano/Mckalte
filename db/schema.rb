@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_002310) do
+ActiveRecord::Schema.define(version: 2021_05_01_021822) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_002310) do
     t.text "fb"
     t.text "impression"
     t.date "date"
+    t.integer "douroku"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 

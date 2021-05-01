@@ -9,6 +9,7 @@
             <th scope="col">コメント</th>
             <th scope="col">更新日</th>
             <th scope="col">FB</th>
+            <th scope="col">同録</th>
           </tr>
         </thead>
          <% @activities.each do |a| %>
@@ -22,6 +23,11 @@
               <td class="sumi"><%= "済" %></td>
             <% else %>
               <td class="mada"><%= "末" %>
+            <% end %>
+            <% if a.douroku == 0 %>
+              <td><%= "不可" %></td>
+            <% else %>
+              <td><%= "可" %>
             <% end %>
           </tr>    
       </tbody>

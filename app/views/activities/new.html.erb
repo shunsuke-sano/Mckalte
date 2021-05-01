@@ -32,7 +32,12 @@
 
       <%= f.label :感想 %>
       <%= f.text_area :impression, class: 'form-control', placeholder: "感想等何でもどうぞ！" %>
-
+      
+      <br>
+      <%= f.label :douroku do%>
+        <%= f.check_box :douroku, checked: true%>
+        同時録画の配信を許可
+      <% end %>
       <div class="text-center touroku">
         <%= f.submit "登録", class: "btn btn-primary" %>
       </div>
