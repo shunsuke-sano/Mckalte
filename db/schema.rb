@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_021822) do
+ActiveRecord::Schema.define(version: 2021_05_15_023432) do
 
   create_table "activities", force: :cascade do |t|
     t.string "title"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 2021_05_01_021822) do
     t.boolean "admin", default: false
     t.integer "grade"
     t.string "password_digest"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "activities", "users"

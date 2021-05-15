@@ -39,6 +39,9 @@
   <div class="logout">
     <%= link_to "ログアウト", logout_path, method: :delete %>
   </div>
+  <div class="logout">
+    <%= link_to "同時録画を見る", archive_path %>
+  </div>
 <% end %>
 <% if current_user.admin? %>
   <div class="toall">
