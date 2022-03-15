@@ -26,6 +26,15 @@ class UsersController < ApplicationController
     @activities = @user.activities.all.order(created_at: :desc)
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      redirect_to request.referer
+    endß
+  end
+
   private 
   
   def user_params
