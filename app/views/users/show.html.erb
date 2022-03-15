@@ -50,7 +50,7 @@
   <% if @user.admin? %>
     <%= link_to '管理ユーザーから外す', user_path(@user.id, user: {admin: false}), method: :put %>
   <% else %>
-    <%= link_to '管理ユーザーにする', user_path(@user.id, user: {admin: true}), method: put %>
+    <%= link_to '管理ユーザーにする', user_path(@user.id, user: {admin: true}), method: :put %>
   <% end %>
 
 <% end %>
