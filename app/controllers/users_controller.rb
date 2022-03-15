@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       redirect_to request.referer
-    endß
+    end
   end
 
   private 
